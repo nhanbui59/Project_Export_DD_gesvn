@@ -1,0 +1,22 @@
+
+
+
+
+
+tìm function có conment ở trên đầu
+
+\/\*[^;}]*?\*\/\s+(static\s)?.*\s+Knl_Set_DmacTI\(.*\)\s+{
+
+bắt define
+#define\s[A-Za-z0-9_]+?\s+\(?.*?\)?\s+?\/\*([^\/\*]+?)\*\/\s|#define\s[A-Za-z0-9_]+?\s+\(?.*?\)?\s+?\/\/(.*)
+#define\s[A-Za-z0-9_]+?\s+\(?.*?\)?\s+?\/\*([^\/\*]+?)\*\/
+
+
+tìm khai báo biến 
+^\s+[^\s-{}+=]+\s+[^\s-{}+=]+?;|^\s+[^\s-{}+=]+\s+[^\s-{}+=]+?\s?=\s?.+;|\svolatile\s|\sconst\s
+
+
+pyinstaller --onefile -w .\docx_v4.py
+
+
+tách các biến trong 1 chuỗi ra [a-zA-Z0-9_.\->]+
